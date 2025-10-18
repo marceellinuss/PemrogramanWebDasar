@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="EN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Formulir Reservation Hotel Room</title>
+    <link rel="stylesheet" href= "D:\Folder Kuliah Atma Jaya\Semester 5\Matkul\Pemrograman Web Dasar\PraktikumPWD\0601\css\style.css" /> 
+  </head>
+  <body>
+    <h1>Reservation Hotel Room</h1>
+    <br> </br>
+    <form action="" method="post">
+      <table>
+
+        <tr>
+          <td>
+            <fieldset>
+              <legend><strong>Personal Date</strong></legend>
+              <ol>
+                <li>
+                  Name<br />
+                  <input type="text" id="name" name="name" size="30" />
+                </li><br />
+                <li>
+                  Gender<br />
+                  <input type="text" id="gender" name="gender" size="30" />
+                </li><br />
+                <li>
+                  Email Address<br />
+                  <input type="text" id="email" name="email" size="30" />
+                </li><br />
+                <li>
+                  Telp Number<br />
+                  <input type="text" id="telp" name="telp" size="30" />
+                </li>
+              </ol>
+            </fieldset>
+          </td>
+        </tr>
+
+        <br></br>
+
+        <tr>
+          <td>
+            <fieldset>
+              <legend><strong>Reservation Room Form</strong></legend>
+              <ol>
+                <li>
+                  Reservator Name<br />
+                  <input type="text" id="reservator" name="reservator" size="30" />
+                </li><br />
+
+                <li>
+                  Booking Date<br />
+                  <input type="text" id="booking" name="booking" size="30" />
+                </li><br />
+
+                <li>
+                  Room Type<br />
+                  <select id="room" name="room">
+                    <option>Deluxe</option>
+                    <option>Superior</option>
+                    <option>Suite</option>
+                  </select>
+                </li><br />
+
+                <li>
+                  Bed Type<br />
+                  <select id="bed" name="bed">
+                    <option>Single bed</option>
+                    <option>Double bed</option>
+                  </select>
+                </li><br />
+
+                <li>
+                  Breakfast<br />
+                  <label for="breakfast_yes">
+                    <input type="radio" id="breakfast_yes" name="breakfast" value="with" />With Breakfast
+                  </label>
+                  <label for="breakfast_no">
+                    <input type="radio" id="breakfast_no" name="breakfast" value="without" />Without Breakfast
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+          </td>
+        </tr>
+        
+        <br></br>
+
+        <tr>
+          <td>
+            <fieldset>
+              <legend><strong>Payment</strong></legend>
+              <ol>
+                <li>
+                  Chek in date<br />
+                  <input type="text" id="checkin" name="checkin" size="30" />
+                </li><br />
+                <li>
+                  Chek out date<br />
+                  <input type="text" id="checkout" name="checkout" size="30" />
+                </li><br />
+                <li>
+                  Payment Method<br />
+                  <select id="payment" name="payment">
+                    <option>Cash</option>
+                    <option>Credit Card</option>
+                    <option>Transfer</option>
+                  </select>
+                </li>
+              </ol>
+            </fieldset>
+          </td>
+        </tr>
+
+        <br></br>
+
+        <tr>
+          <td style="text-align: center;">
+            <input type="submit" id="submit" name="submit" value="Submit" />
+          </td>
+        </tr>
+
+      </table>
+    </form>
+  </body>
+</html>

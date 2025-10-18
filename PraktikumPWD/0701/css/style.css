@@ -1,0 +1,90 @@
+* { 
+    box-sizing: border-box;         /* ini mengatur cara browser menghitung ukuran elemen (lebar/tinggi) */
+}
+
+body {
+    font-family: "Segoe UI";
+    line-height: 1.55;
+    background:
+        radial-gradient(900px 480px at 15% 18%, rgba(236,72,153,.15), transparent 100%),
+        radial-gradient(800px 440px at 85% 30%, rgba(34,211,238,.12), transparent 100%),
+        linear-gradient(135deg, #0f0a1f, #1a0f26 55%, #0b1020);
+    color: #f5f6fa;
+}
+
+h1 {
+    font-family: Arial;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: .3px;
+    margin: 24px 0;
+}
+
+table { 
+    width: 70%; 
+    margin: auto auto;
+}
+
+fieldset {
+    border: 1.5px solid rgb(0, 216, 244);     /* ini buat warnain garis di fieldset*/
+    border-radius: 10px;                        /* ini buat lengkungannya*/   
+    padding: 16px 18px;                         /* ini buat jarak teks (atas bawah 16) (kiri kanan 18)*/
+    background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+}
+
+legend {
+    padding: 0 0.5rem;      /* ini buat jarak di sebelah legendnya, artinya rem itu berarti jarak huruf, 
+                                kalo 0.5 rem berarti setengah dari ukuran 1 huruf 
+                                kalo diganti ke px juga bisa*/
+    color: #ffffff;
+    font-size: 20px;
+}
+
+fieldset ol { 
+    list-style: none;           /* ini buat ngilangin list nya, conntoh 1, 2, 3...*/
+    padding: 0;                 /* ini biar padding kiri list set ke nol atau rata sama kontainer*/
+}
+fieldset ol li { 
+    margin: 10px 0 0;           /* ini memberi jarak atas*/
+    color: #ffffff; 
+    font-weight: 600; 
+}
+                                /*rangkuman shorthand margin
+                                margin: A; → semua sisi = A
+                                margin: A B; → atas/bawah = A, kiri/kanan = B
+                                margin: A B C; → atas = A, kiri/kanan = B, bawah = C
+                                margin: A B C D; → atas = A, kanan = B, bawah = C, kiri = D*/
+
+input[type="text"],select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid rgba(255,255,255,.3);     /* a nya itu alpha (0-1) artinya tingkat opacity*/
+    border-radius: 5px;
+    background: rgba(15,23,42,.55);             /* ini backgroun buat isian */
+    color: #fff;                                /* ini warna teksnya */
+    outline: none;
+}
+input[type="text"]:focus,select:focus {
+    box-shadow: 0 0 0 6px rgba(34,211,238,.35); /* ini buat warnain bordernya kalo lagi dipencet/dipilih*/
+}
+
+input[type="submit"] {
+    padding: 12px 50px;
+    margin: 14px 0 24px;
+    font-weight: 800;
+    color: #000000;
+    background: linear-gradient(#f9a8d4, #a9f5ff);
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(236,72,153,.28);       /* ini buat sprti efek mengambang */
+    cursor: pointer;
+}
+input[type="submit"]:hover {                /* kalo pointer lewat */
+    filter: brightness(2) saturate(2);      /* jadi lebih terang */
+    transform: translateY(-2px);            /* ini jadi efek terangkat */
+}
+input[type="submit"]:active {               /* ini kalo ditekan berarti balik ke posisi awal, tapi tetap terang */
+    transform: translateY(0); 
+}
+
