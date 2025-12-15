@@ -1,0 +1,61 @@
+CREATE DATABASE hotel_db;
+USE hotel_db;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin','tamu') NOT NULL,
+    is_active TINYINT(1) DEFAULT 0,
+    activation_token VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE admins (
+    user_id INT PRIMARY KEY,
+    nama_lengkap VARCHAR(100),
+    nomor_telepon VARCHAR(20),
+    alamat TEXT,
+    foto_profil VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE tamu (
+    user_id INT PRIMARY KEY,
+    nama_lengkap VARCHAR(100),
+    tanggal_lahir DATE,
+    jenis_kelamin ENUM('Laki-laki','Perempuan'),
+    nomor_identitas VARCHAR(50),
+    alamat TEXT,
+    foto_profil VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE hotel (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_hotel VARCHAR(100),
+    deskripsi TEXT,
+    alamat TEXT,
+    harga_per_malam DECIMAL(12,2) NOT NULL DEFAULT 0,
+    total_kamar INT NOT NULL DEFAULT 0,
+    kamar_tersedia INT NOT NULL DEFAULT 0,
+    latitude DOUBLE,
+    longitude DOUBLE,
+    pemilik_id INT, 
+    FOREIGN KEY (pemilik_id) REFERENCES admins(user_id) ON DELETE SET NULL
+);
+
+CREATE TABLE reservasi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tamu_id INT,
+    hotel_id INT,
+    tanggal_checkin DATE,
+    tanggal_checkout DATE,
+    jumlah_malam INT, 
+    total_biaya DECIMAL(10,2),
+    status ENUM('dipesan','dibayar','dibatalkan') DEFAULT 'dipesan',
+    dibuat_pada TIMESTAMP DEFAULT CURRENT_TIMESTAMP,-
+    FOREIGN KEY (tamu_id) REFERENCES tamu(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (hotel_id) REFERENCES hotel(id) ON DELETE CASCADE
+);

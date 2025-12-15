@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrasi Pemilik Hotel</title>
+    <link rel="stylesheet" href="aset/css/style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Registrasi Pemilik Hotel</h2>
+      <form id="registerAdminForm" method="POST" action="../backend/register.php" novalidate>
+        <input type="hidden" name="role" value="admin">
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <label class="lihat-password">
+          <input type="checkbox" class="cekLihatPassword">
+          Tampilkan password
+        </label>
+        <button type="submit">Daftar</button>
+      </form>
+      <p>Sudah punya akun? <a href="login_admin.html">Login Pemilik Hotel</a></p>
+    </div>
+    <script src="aset/js/validasi.js"></script>
+  </body>
+
+</html>

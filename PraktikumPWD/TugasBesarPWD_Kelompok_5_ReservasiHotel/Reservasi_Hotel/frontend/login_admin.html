@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Pemilik Hotel</title>
+    <link rel="stylesheet" href="aset/css/style.css">
+  </head>
+  
+  <body>
+    <div class="header">
+      <a href="login.html" class="user-btn">Tamu?</a>
+    </div>
+    <div class="halaman-login">
+      <div class="info-aplikasi">
+        <img src="aset/icon/logo_hotel.png" alt="Logo NginapID" class="info-logo-login">
+        <p class="info-teks">
+          Aplikasi reservasi hotel sederhana untuk pemilik dan tamu.
+          Pesan kamar, kelola reservasi, dan pantau pendapatan hotel Anda.
+        </p>
+      </div>
+    <div class="container">
+      <h2>Login Pemilik Hotel</h2>
+      <form id="loginAdminForm" method="POST" action="../backend/login.php" novalidate>
+        <input type="hidden" name="role" value="admin">
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <label class="lihat-password">
+          <input type="checkbox" class="cekLihatPassword">
+          Tampilkan password
+        </label>
+        <button type="submit">Login</button>
+      </form>
+      <p>Belum punya akun? <a href="register_admin.html">Daftar Pemilik Hotel</a></p>
+    </div>
+    <script src="aset/js/validasi.js"></script>
+  
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil Tamu</title>
+  <link rel="stylesheet" href="aset/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Profil Tamu</h2>
+    <p class="info-kecil">
+      Lengkapi data diri Anda sebagai tamu agar proses reservasi lebih jelas dan aman.
+    </p>
+
+    <form method="POST" action="../backend/profil_tamu.php" enctype="multipart/form-data">
+      <label for="nama_lengkap">Nama Lengkap</label>
+      <input type="text" id="nama_lengkap" name="nama_lengkap" required>
+
+      <label for="tanggal_lahir">Tanggal Lahir</label>
+      <input type="date" id="tanggal_lahir" name="tanggal_lahir">
+
+      <label>Jenis Kelamin</label>
+      <div class="radio-grup">
+        <label>
+          <input type="radio" name="jenis_kelamin" value="Laki-laki" required>
+          Laki-laki
+        </label>
+        <label>
+          <input type="radio" name="jenis_kelamin" value="Perempuan">
+          Perempuan
+        </label>
+      </div>
+
+      <label for="nomor_identitas">Nomor Identitas (KTP/SIM/Passport)</label>
+      <input type="text" id="nomor_identitas" name="nomor_identitas">
+
+      <label for="alamat">Alamat</label>
+      <textarea id="alamat" name="alamat" rows="3"></textarea>
+
+      <label for="foto_profil">Foto Profil</label>
+      <input type="file" id="foto_profil" name="foto_profil" accept="image/*">
+
+      <label>
+        <input type="checkbox" name="lewati_foto" value="1">
+        Lewati foto dulu
+      </label>
+
+      <button type="submit">Simpan Profil</button>
+    </form>
+  </div>
+</body>
+</html>
